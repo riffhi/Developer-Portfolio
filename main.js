@@ -7,6 +7,7 @@ var typeData = new Typed(".role", {
         "a Full Stack Developer",
         "2x Ideathon Winner",
         "4x Hackathon Finalist",
+        "President of CSI-RAIT",
         "Riddhi Bhanushali",
     ],
     loop: true,
