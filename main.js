@@ -86,7 +86,7 @@ function highlightNavLink() {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('active'); \
+        link.classList.remove('active'); 
         if(link.getAttribute('href') === `#${currentSectionId}`) {
             link.classList.add('active');
         }
