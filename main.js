@@ -1,6 +1,4 @@
-// ====== Main JavaScript Entry File ======
 
-// 1. Code for the typing animation (This was missing)
 var typeData = new Typed(".role", {
     strings: [
         "an AI/ML Engineer",
@@ -16,15 +14,33 @@ var typeData = new Typed(".role", {
     backDelay: 1000,
 });
 
+document.querySelectorAll('.nav-item a').forEach(link => {
+    link.addEventListener('click', (event) => {
+        navMenu.classList.remove('active');
 
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        if (targetElement) {
-            targetElement.scrollIntoView({
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            
+            event.preventDefault();
+
+            
+            document.querySelector(href).scrollIntoView({
                 behavior: 'smooth'
             });
         }
+    });
+});
+
+const hamburger = document.querySelector('.hamburger-icon');
+const navMenu = document.querySelector('.nav-items');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+
+document.querySelectorAll('.nav-item a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
     });
 });
